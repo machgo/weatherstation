@@ -466,38 +466,37 @@ void reportWeather()
 {
   calcWeather(); //Go calc all the various sensors
 
-  Serial.print("$,winddir=");
+  Serial.print("{\"winddir\": ");
   Serial.print(winddir);
-  Serial.print(",windspeedkmh=");
+  Serial.print(", \"windspeedkmh\": ");
   Serial.print(windspeedkmh, 1);
-  Serial.print(",windgustkmh=");
+  Serial.print(", \"windgustkmh\": ");
   Serial.print(windgustkmh, 1);
-  Serial.print(",windgustdir=");
+  Serial.print(", \"windgustdir\": ");
   Serial.print(windgustdir);
-  Serial.print(",windspdkmh_avg2m=");
+  Serial.print(", \"windspdkmh_avg2m\": ");
   Serial.print(windspdkmh_avg2m, 1);
-  Serial.print(",winddir_avg2m=");
+  Serial.print(", \"winddir_avg2m\": ");
   Serial.print(winddir_avg2m);
-  Serial.print(",windgustkmh_10m=");
+  Serial.print(", \"windgustkmh_10m\": ");
   Serial.print(windgustkmh_10m, 1);
-  Serial.print(",windgustdir_10m=");
+  Serial.print(", \"windgustdir_10m\": ");
   Serial.print(windgustdir_10m);
-  Serial.print(",humidity=");
+  Serial.print(", \"humidity\": ");
   Serial.print(humidity, 1);
-  Serial.print(",tempc=");
+  Serial.print(", \"tempc\": ");
   Serial.print(tempc, 1);
-  Serial.print(",rainmm=");
+  Serial.print(", \"rainmm\": ");
   Serial.print(rainmm, 2);
-  Serial.print(",dailyrainmm=");
+  Serial.print(", \"dailyrainmm\": ");
   Serial.print(dailyrainmm, 2);
-  Serial.print(",pressure="); //Don't print pressure= because the agent will be doing calcs on the number
+  Serial.print(", \"pressure\": "); //Don't print pressure= because the agent will be doing calcs on the number
   Serial.print(pressure, 2);
-  Serial.print(",batt_lvl=");
+  Serial.print(", \"batt_lvl\": ");
   Serial.print(batt_lvl, 2);
-  Serial.print(",light_lvl=");
+  Serial.print(", \"light_lvl\": ");
   Serial.print(light_lvl, 2);
-  Serial.print(",");
-  Serial.println("#,");
+  Serial.println("}");
 
   //Test string
   //Serial.println("$,winddir=270,windspeedmph=0.0,windgustmph=0.0,windgustdir=0,windspdmph_avg2m=0.0,winddir_avg2m=12,windgustmph_10m=0.0,windgustdir_10m=0,humidity=998.0,tempf=-1766.2,rainin=0.00,dailyrainin=0.00,-999.00,batt_lvl=16.11,light_lvl=3.32,#,");
